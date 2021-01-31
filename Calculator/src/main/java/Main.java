@@ -64,11 +64,6 @@ public class Main {
 		}
 		return returnValue;
 	}
-	
-	public static Double calculator(String input) {
-		return addAndSubtract(input);
-		
-	}
 
 	public static void main(String[] args) {
 	//	String input = "3*9+9/2+9.222+2-4/3/1/2*3";
@@ -77,7 +72,7 @@ public class Main {
 		Scanner in = new Scanner(System.in);
 		String consoleInput;
 		while((consoleInput=in.nextLine())!="") {
-			System.out.println("answer is: "+calculator(consoleInput));
+			System.out.println("answer is: "+addAndSubtract(consoleInput));
 			System.out.println("");
 		}	
 	}
