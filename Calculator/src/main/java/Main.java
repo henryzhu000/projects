@@ -3,15 +3,16 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 	/*
-	The math equation input string is first separated into blocks by '+' or '-'.
-	Calculate any multiplication or division in each block so a number can be returned to be added or subtracted
-	
-	Author Guang Zhu
-	*/
+	 * The math equation input string is first separated into blocks by '+' or '-'.
+	 * Calculate any multiplication or division in each block so a number can be returned to be added or subtracted
+	 * 
+	 * @Author Guang Zhu
+	 * */
+
 public class Main {
 
-
-	
+	final static String multiplierAndDivisionRegrex="[*|/]";
+	final static String addingAndSubtractRegrex="[+|-]";
 	
 	public static Double multiplyAndDivide(String input) {
 		// records whether each number should be multiplied or divided 
@@ -24,7 +25,7 @@ public class Main {
 			}
 		}
 		
-		String numberTokens[] = input.split("[*|/]");
+		String numberTokens[] = input.split(multiplierAndDivisionRegrex);
 		//Multiplication or division is only associated with the second or further array element in the array of numbers. 
 		//So if there's only one number in split array then you have no arithmetic to do
 		Double returnValue = Double.parseDouble(numberTokens[0]);
@@ -50,34 +51,35 @@ public class Main {
 			}
 		}
 		
-		String numberTokens[] = input.split("[+|-]");
-		Double returnValue = multiplyAndDivide(numberTokens[0]);
+		String arthmeticTokens[] = input.split(Main.addingAndSubtractRegrex);
+		Double returnValue = multiplyAndDivide(arthmeticTokens[0]);
 		//Addition or subtraction is only associated with the second or further array element in the array of numbers. 
 		//So if there's only one number in split array then you have no arithmetic to do
-		for (int i = 1; i < numberTokens.length; i++) {
+		for (int i = 1; i < arthmeticTokens.length; i++) {
 			if (plusOrMinus.get(i - 1)) {
-				returnValue += multiplyAndDivide(numberTokens[i]);
+				returnValue += multiplyAndDivide(arthmeticTokens[i]);
 			} else {
-				returnValue -= multiplyAndDivide(numberTokens[i]);
+				returnValue -= multiplyAndDivide(arthmeticTokens[i]);
 			}
 		}
 		return returnValue;
 	}
+	
+	public static Double calculator(String input) {
+		return addAndSubtract(input);
+		
+	}
 
 	public static void main(String[] args) {
-
 	//	String input = "3*9+9/2+9.222+2-4/3/1/2*3";
-		
 		System.out.println("Welcome to Calculator! Type your equation bellow"); 
 		System.out.println("");
 		Scanner in = new Scanner(System.in);
 		String consoleInput;
 		while((consoleInput=in.nextLine())!="") {
-			System.out.println("answer is: "+addAndSubtract(consoleInput));
+			System.out.println("answer is: "+calculator(consoleInput));
 			System.out.println("");
-		}
-		
-
+		}	
 	}
 
 }
