@@ -21,19 +21,6 @@ public class Main {
 	static Scanner sc = new Scanner(System.in);
 	static int sortedArray[];
 
-	public static void insertAndSort(ArrayList<Integer> array, int input) {
-		array.add(input);
-		int temp;
-		for (int i = array.size() - 1; i > 0; i--) {
-			if (array.get(i) > array.get(i - 1)) {
-				break;
-			} else {
-				temp = array.get(i);
-				array.set(i, array.get(i - 1));
-				array.set(i - 1, temp);
-			}
-		}
-	}
 
 	static void merge(int arr[], int l, int m, int r) {
 		// Find sizes of two subarrays to be merged
