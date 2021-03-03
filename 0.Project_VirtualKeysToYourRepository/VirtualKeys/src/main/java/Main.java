@@ -375,15 +375,6 @@ public class Main {
 	}
 
 	public static void main(String[] args) {
-		/*
-		 * sortFile("D:\\desktopmostly\\desktop\\Desktop\\htnshn2.txt");
-		 * sortFile("D:\\desktopmostly\\desktop\\Desktop\\New Text Document.txt");
-		 * sortFile("D:\\desktopmostly\\desktop\\Desktop\\response.txt");
-		 * sortFile("D:\\desktopmostly\\desktop\\Desktop\\htnshn.txt");
-		 */
-		// String temp; for(int i=0;i<1000000;i++) {temp=Tools.intTo2Char(i);
-		// if(i!=Tools.twoCharToInt(temp)) {System.out.println("not same"); break;} }
-		// System.out.println((char)2);
 
 		userInteraction();
 
