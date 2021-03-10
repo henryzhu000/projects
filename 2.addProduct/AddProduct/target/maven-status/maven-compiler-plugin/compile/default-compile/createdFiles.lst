@@ -1,0 +1,4 @@
+com\example\HibernateUtil.class
+com\example\DBConnection.class
+com\example\database.class
+com\example\PetsServlet.class
